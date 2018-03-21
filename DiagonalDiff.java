@@ -4,41 +4,49 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Solution {
+ class DiagonalDiff {
 
+	int n;
+	int a1=n-1;
     /*
      * Complete the diagonalDifference function below.
      */
-    static int diagonalDifference(int[][] a) {
+     int diagonalDifference(int a[][]) {
         /*
          * Write your code here.
          */
-
+		 int sum1=0;
+	 int sum2=0;
+	 int result;
+		 for(int i=0;i<a.length;i++)
+		 {
+			 sum1=sum1+a[i][i];
+		 }
+		  for(int i=n;i>a[a1].length;i--)
+		 {
+			 sum2=sum2+a[i][i];
+		 }
+		 result=sum1+sum2;
+		 return result;
     }
 
-    private static final Scanner scan = new Scanner(System.in);
+    
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+    public static void main(String[] args)  {
+         Scanner scan = new Scanner(System.in);
 
-        int n = Integer.parseInt(scan.nextLine().trim());
+        int n = scan.nextInt();
 
         int[][] a = new int[n][n];
-
-        for (int aRowItr = 0; aRowItr < n; aRowItr++) {
-            String[] aRowItems = scan.nextLine().split(" ");
-
-            for (int aColumnItr = 0; aColumnItr < n; aColumnItr++) {
-                int aItem = Integer.parseInt(aRowItems[aColumnItr].trim());
-                a[aRowItr][aColumnItr] = aItem;
-            }
-        }
-
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				a[i][j]=scan.nextInt();
+			}
+			}
         int result = diagonalDifference(a);
 
-        bw.write(String.valueOf(result));
-        bw.newLine();
-
-        bw.close();
+       System.out.println(result);
     }
 }
