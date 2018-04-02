@@ -13,37 +13,38 @@ class Dictionary{
         for( i = 0; i < n; i++){
             String name = in.next();
             int phone = in.nextInt();
-            // Write code here
             PhoneBook.put(name,phone);
             
         }
+        //System.out.println(i);
 		
         while(!in.hasNextInt()){
             String s = in.next();
-			while(i<m)
+			while(j<m)
 			{
 				//System.out.println("a");
-				a[i-1]=s;
+				a[j]=s;
 				c+=1;
-				break;
-				
+				break;		
 			}
-			i+=1;
-            // Write code here
-			
+			j+=1;
         }
-		
-for(String key:PhoneBook.keySet())
+     
+ 
+for(String key: PhoneBook.keySet())
 {
-	for(j=0;j<c;j++)
+	for(int p=0;p<c;p++)
 	{
-		if(a[j]==key)
+		if(a[p].equals(key))
 		{
-System.out.println("abc");
+			System.out.println(key+ "=" +PhoneBook.get(key));
 		}
-		}
-		}
+		else
+			System.out.println("not found");
 		
+		}
+	//System.out.println(key);
+}
         in.close();
     }
 }
