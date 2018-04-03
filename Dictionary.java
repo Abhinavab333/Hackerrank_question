@@ -18,19 +18,17 @@ class Dictionary{
         }
         //System.out.println(i);
 		
-        while(!in.hasNextInt()){
+        while(in.hasNext()){
             String s = in.next();
-			while(j<m)
+			while(j<n)
 			{
-				//System.out.println("a");
+				
 				a[j]=s;
 				c+=1;
 				break;		
 			}
 			j+=1;
-        }
-     
- 
+		}
 for(String key: PhoneBook.keySet())
 {
 	for(int p=0;p<c;p++)
@@ -43,7 +41,7 @@ for(String key: PhoneBook.keySet())
 			System.out.println("not found");
 		
 		}
-	//System.out.println(key);
+	
 }
         in.close();
     }
